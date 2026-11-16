@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Connecting to Qevy's Kingdom…</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0a0c11;color:#e9ebf1;
+font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:#7b93ff}
+</style>
+</head>
+<body>
+<p id="msg">Connecting your Kick account to Qevy's Kingdom…</p>
+<script>
+/* Kick only allows https:// redirect links, so Kick sends people here first.
+   This page forwards the login straight on to the bot's dashboard. */
+var DASHBOARD = "http://78.154.103.29:13073/kick/callback";
+var target = DASHBOARD + location.search;
+document.getElementById("msg").innerHTML = 'Connecting… If nothing happens, <a href="' +
+  target.replace(/"/g, "%22") + '">click here</a>.';
+location.replace(target);
+</script>
+</body>
+</html>
